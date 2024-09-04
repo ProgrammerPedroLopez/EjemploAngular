@@ -1,0 +1,15 @@
+<h3>Listado de heroes</h3>
+
+<h3 *ngIf="deletedGame;else nothingWasDeleted">Juego borrado <small class="text-danger">{{deletedGame}}</small></h3>
+<ng-template #nothingWasDeleted>
+  <h3>No ha borrado nada</h3>
+</ng-template>
+
+
+
+
+<button class="btn btn-outline-danger" (click)="removeLastGame()" *ngIf="Games.length > 0">Borrar ultimo elemento</button>
+
+<ul class="mt-2 list-group">
+  <li class="list-group-item" *ngFor="let item of Games">{{item}}</li>
+</ul>
